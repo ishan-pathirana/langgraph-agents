@@ -50,3 +50,8 @@ graph = builder.compile()
 messages = graph.invoke({"messages": HumanMessage(content="Hello!")})
 for message in messages["messages"]:
     message.pretty_print()
+
+# Invoke tools llm with a tool call
+messages = graph.invoke({"messages": HumanMessage(content="Multiply 2 and 3")})
+for message in messages["messages"]:
+    message.pretty_print()
